@@ -1,0 +1,19 @@
+create table TAB_FATURAMENTO(
+DATA_VENDA DATE NULL,
+TOTAL_VENDA FLOAT
+)
+
+create trigger TG_ITENS_VENDIDOS
+on [dbo].[NOTAS FISCAIS]
+after insert, update, delete 
+as
+begin
+ 
+delete from TAB_FATURAMENTO
+insert into TAB_FATURAMENTO (DATA_VENDA, TOTAL_VENDA)
+select NF.DATA as DATA_VENDA, SUM(INF.QUANTIDADE * INF.PREÇO) as TOTAL_VENDA
+from [NOTAS FISCAIS] NF
+inner join [ITENS NOTAS FISCAIS] INF on NF.NUMERO = INF.NUMERO
+group by NF.DATA;
+
+end
