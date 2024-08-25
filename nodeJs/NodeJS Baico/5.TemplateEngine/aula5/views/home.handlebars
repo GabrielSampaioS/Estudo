@@ -1,0 +1,10 @@
+<h1>Ola</h1>
+<p>nome do usuario {{user.name}} {{user.subname}} </p>
+
+{{!-- Não poddo fazer um auth === True, tenho que passar diretamente o valor --}}
+{{#if auth}}
+<p>vc esta autenticado, clique <a href="/dashboard"> aqui </a>para continuar</p>
+
+{{else}}
+<p>Realize a autentificação!</p>
+{{/if}}

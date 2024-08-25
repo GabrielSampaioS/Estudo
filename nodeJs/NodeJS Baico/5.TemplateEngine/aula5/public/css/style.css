@@ -1,0 +1,51 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f7f8;
+    margin: 0;
+    padding: 0;
+    color: #1c1c1c;
+}
+
+/* Estilo do contêiner principal do post */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 5px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título */
+h2 {
+    font-size: 1.8em;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+/* Estilo dos parágrafos */
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+    padding: 10px 0;
+    color: #555;
+}
+
+/* Estilo do link */
+a {
+    color: #0079d3;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #0079d3;
+}
+
+/* Estilo do link quando o mouse passa por cima */
+a:hover {
+    color: #0056a3;
+    border-bottom: 1px solid #0056a3;
+}

@@ -1,0 +1,19 @@
+Iremos utilizar a Handlebars, existe muitas outras como EJS, Pug etc
+
+aula1:
+    require express-handlebars
+    criar pasta views
+
+aula 2:
+    Criando uma views
+
+aula3:
+    passando dados para a view
+
+aula4:
+    condicionais if else e estrutura de repetição
+
+aula5:
+        Utilizando partials, são mini templates
+        view/partials
+        e utilizaremos a sintaxe {{> partial}}
