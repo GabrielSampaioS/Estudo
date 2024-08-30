@@ -1,0 +1,12 @@
+1. Fila (Queue)
+Primeiro a entrar, primeiro a sair (First In, First Out - FIFO)
+Último a entrar, último a sair
+
+2. Pilha (Stack)
+Primeiro a entrar, último a sair (First In, Last Out - FILO)
+Último a entrar, primeiro a sair (Last In, First Out - LIFO)
+
+3.
+
+4.1 Tabela Hash simples, sem levar em consideração colisão de indices 
+4.2
