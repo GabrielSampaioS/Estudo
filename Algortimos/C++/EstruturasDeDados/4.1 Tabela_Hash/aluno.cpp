@@ -1,22 +1,32 @@
-#include <iostream> 
-#include  "aluno.h"
+#include <iostream>
+#include "aluno.h"
 
 using namespace std;
 
-Aluno::Aluno(){
+Aluno::Aluno()
+{
     this->ra = -1;
-    this->nome = "";
+    this->nome = "Vazio";
 }
 
-Aluno::Aluno(int ra, std::string nome){
+Aluno::Aluno(int ra, string nome)
+{
     this->ra = ra;
     this->nome = nome;
 }
 
-Aluno::getRa const{
+Aluno::~Aluno()
+{
+    // Não há necessidade de desalocar manualmente
+    // delete Aluno;  // Isso causaria erro
+}
+
+int Aluno::getRa() const
+{
     return ra;
 }
 
-Aluno::getName const{
-    return nome;
+string Aluno::getName() const
+{   
+    return  this->nome;
 }
