@@ -1,13 +1,12 @@
-// Criando apenas uma estrutura simples com busca, inserção e remoção
 #include "aluno.h"
 
 class Hash
 {
 private:
     int length;
-    Aluno *structure; // Ponteiro para um array de objetos Aluno
+    Aluno *structure;
 
-    int getHash(Aluno aluno); // Função de hash para calcular o índic
+    int getHash(Aluno aluno);
 
 public:
     Hash();

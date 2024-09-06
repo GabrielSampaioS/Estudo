@@ -40,6 +40,8 @@ int main()
     cout << endl << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
     Aluno aluno(414, "Gabriel");
     bool teste;
+
+    //Que ?
     alunosHash.retriveItem(aluno, teste);
     alunosHash.print();
 
