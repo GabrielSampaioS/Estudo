@@ -9,4 +9,6 @@ Primeiro a entrar, último a sair (First In, Last Out - FILO)
 3.
 
 4.1 Tabela Hash simples, sem levar em consideração colisão de indices 
+
 4.2 Tabela Hash simples, tratando colisão com teste linear
+
