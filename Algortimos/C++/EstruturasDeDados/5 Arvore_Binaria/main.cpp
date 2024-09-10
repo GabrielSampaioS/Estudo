@@ -20,7 +20,7 @@ int main()
     arvore.printPre();
     cout << endl;
 
-    arvore.removerItem(15);
+    arvore.removerItem(20);
 
     cout << "printPre(): ";
     arvore.printPre();

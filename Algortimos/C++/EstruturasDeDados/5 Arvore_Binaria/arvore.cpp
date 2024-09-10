@@ -76,9 +76,9 @@ void Arvore::printInOrder(No *raiz)
 {
     if (raiz != nullptr)
     {
-        printPreOrder(raiz->Lfilho);
+        printInOrder(raiz->Lfilho);
         cout << raiz->valor << " , ";
-        printPreOrder(raiz->Rfilho);
+        printInOrder(raiz->Rfilho);
     }
 }
 
@@ -93,41 +93,54 @@ void Arvore::printPostOrder(No *raiz)
     }
 }
 
-// Entendi nada
-// https://youtu.be/uum907bCjBw?t=367
+
 void Arvore::deletarNo(No *&tree, int valor)
 {
-    /*temos 3 casos:
-    1. O no é uma folha
-    2. O no tem um filho
-    3. O no tem dois filhos (buscar pelo sucessor)
-    */
+    if (tree == nullptr) return; // Árvore vazia ou nó não encontrado
 
-    // caso 1 e 2
-    No *elemento = encontrarNo(tree, valor);
-    No *TempPtr;
-    cout << elemento->valor;
-
-    if (elemento->Lfilho == nullptr)
+    if (valor < tree->valor)
     {
-        raiz = raiz->Rfilho;
-        delete TempPtr;
+        deletarNo(tree->Lfilho, valor); // Buscar na subárvore esquerda
     }
-    else if (elemento->Rfilho == nullptr)
+    else if (valor > tree->valor)
     {
-        raiz = raiz->Lfilho;
-        delete TempPtr;
+        deletarNo(tree->Rfilho, valor); // Buscar na subárvore direita
     }
     else
     {
-        // caso 3
-        TempPtr = elemento->Rfilho;
-        cout << "teste:" << TempPtr->valor << endl;       
-        cout << "teste:" << endl;       
-        // 15
-    }
+        // Caso 1: O nó é uma folha 
+        if (tree->Lfilho == nullptr && tree->Rfilho == nullptr)
+        {
+            tree = nullptr;  
+        }
+        // Caso 2: O nó tem um único filho
+        else if (tree->Lfilho == nullptr)
+        {
+            tree = tree->Rfilho; 
+        }
+        else if (tree->Rfilho == nullptr)
+        {
+            tree = tree->Lfilho; 
+        }
 
+        // Caso 3: O nó tem dois filhos
+        else
+        {
+            // Encontra o sucessor 
+            No *TempPtr = nullptr;
+            TempPtr = tree->Rfilho;
+            while (TempPtr->Lfilho != nullptr)
+            {
+                TempPtr = TempPtr->Lfilho;
+            }
+            // Substitui o valor do nó pelo valor do sucessor
+            tree->valor = TempPtr->valor;
+            // Deleta o sucessor recursivamente
+            deletarNo(tree->Rfilho, TempPtr->valor);
+        }
+    }
 }
+
 
 No *Arvore::encontrarNo(No *&tree, int valor)
 {
