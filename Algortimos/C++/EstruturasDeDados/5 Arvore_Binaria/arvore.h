@@ -31,6 +31,7 @@ public:
 
     void removerItem(int valor) { deletarNo(raiz, valor);}
 
+
 private: // As funções públicas chamam funções privadas recursivas
     void destruirArvore(No *&raiz);
 
@@ -43,5 +44,6 @@ private: // As funções públicas chamam funções privadas recursivas
     void deletarNo(No *&tree, int valor);
 
     No *encontrarNo(No *&raiz, int valor);
+
 
 };

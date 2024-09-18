@@ -93,10 +93,10 @@ void Arvore::printPostOrder(No *raiz)
     }
 }
 
-
 void Arvore::deletarNo(No *&tree, int valor)
 {
-    if (tree == nullptr) return; // Árvore vazia ou nó não encontrado
+    if (tree == nullptr)
+        return; // Árvore vazia ou nó não encontrado
 
     if (valor < tree->valor)
     {
@@ -108,25 +108,25 @@ void Arvore::deletarNo(No *&tree, int valor)
     }
     else
     {
-        // Caso 1: O nó é uma folha 
+        // Caso 1: O nó é uma folha
         if (tree->Lfilho == nullptr && tree->Rfilho == nullptr)
         {
-            tree = nullptr;  
+            tree = nullptr;
         }
         // Caso 2: O nó tem um único filho
         else if (tree->Lfilho == nullptr)
         {
-            tree = tree->Rfilho; 
+            tree = tree->Rfilho;
         }
         else if (tree->Rfilho == nullptr)
         {
-            tree = tree->Lfilho; 
+            tree = tree->Lfilho;
         }
 
         // Caso 3: O nó tem dois filhos
         else
         {
-            // Encontra o sucessor 
+            // Encontra o sucessor
             No *TempPtr = nullptr;
             TempPtr = tree->Rfilho;
             while (TempPtr->Lfilho != nullptr)
@@ -140,7 +140,6 @@ void Arvore::deletarNo(No *&tree, int valor)
         }
     }
 }
-
 
 No *Arvore::encontrarNo(No *&tree, int valor)
 {
