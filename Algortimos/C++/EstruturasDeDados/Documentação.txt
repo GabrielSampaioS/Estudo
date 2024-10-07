@@ -6,9 +6,15 @@ Primeiro a entrar, primeiro a sair (First In, First Out - FIFO)
 Primeiro a entrar, último a sair (First In, Last Out - FILO)
 Último a entrar, primeiro a sair (Last In, First Out - LIFO)
 
-3.
+3.1
 
 4.1 Tabela Hash simples, sem levar em consideração colisão de indices 
 
 4.2 Tabela Hash simples, tratando colisão com teste linear
+
+5.1 Arvore
+
+5.2 Arvore AVL
+
+6 Grafos
 
