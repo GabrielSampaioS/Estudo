@@ -74,14 +74,12 @@ app.get('/book/edit/:id', (req, res) => {
     const id = req.params.id
     const query = `SELECT * FROM BOOKS WHERE ID = ${id}`
 
-
     conn.query(query, function (err, data) {
         if (err) {
             console.log(err)
             return res.status(500).send('Erro ao editar o livro.');
         }
         const book = data[0]
-        console.log[book]
         res.render('bookEdit', { book })
     })
 
