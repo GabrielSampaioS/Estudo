@@ -1,3 +1,12 @@
+/*
+Sugestão  para melhoria
+1. Separar as Rotas em Módulos:
+2. Criar um Arquivo de Conexão com o Banco de Dados:
+3. Utilizar dotenv para Configurações Sensíveis:
+4. Melhorar a Segurança (SQL Injection):
+*/
+
+
 // Configurando Server
 
 const express = require('express');
@@ -32,7 +41,7 @@ const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'NodeMySQL'
+    database: 'test'
 });
 
 // Conectar ao banco de dados
@@ -125,9 +134,12 @@ app.post('/books/insertbook', (req, res) => {
     const pageqty = req.body.pagesqty; // Corrigido para 'pagesqty'
 
     //Vulneravel a SQL Injection
-    const query = `INSERT INTO BOOKS (nome, qtdPaginas) VALUES ('${title}', '${pageqty}')`;
+    //const query = `INSERT INTO BOOKS (nome, qtdPaginas) VALUES ('${title}', ${pageqty})`;
 
-    conn.query(query, function (err) {
+    const query = `INSERT INTO BOOKS (??, ??) VALUES (?, ?)`
+    const values = ['nome', 'qtdPaginas', title, pageqty]
+
+    conn.query(query, values, function (err) {
         if (err) {
             console.log(err);
             return res.status(500).send('Erro ao inserir o livro.'); // Resposta em caso de erro
