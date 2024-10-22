@@ -1,14 +1,14 @@
 
 <h1>Edite o seu livro:</h1>
 
-<form action="/book/updatebook" method="post">
+<form action="/livros/updatelivro" method="post">
 
 
 
-<input type="hidden" name="id" value="{{book.id}}">
+<input type="hidden" name="id" id="id" value="{{book.id}}">
     <div class="form-control">
         <label for="title">Título</label>
-        <input type="text" name="title" id="title" value={{book.nome}} required>
+        <input type="text" name="title" id="title" value= "{{book.nome}}" required> 
     </div>
 
     <div class="form-control">

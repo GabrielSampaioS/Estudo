@@ -98,7 +98,7 @@ input[type="submit"]:hover {
     display: inline-block; /* Para permitir padding e largura */
     background-color: #007bff; /* Cor de fundo do botão */
     color: white; /* Cor do texto */
-    padding: 10px 15px; /* Espaçamento interno */
+   /* padding: 0px 0px; /* Espaçamento interno */
     border-radius: 5px; /* Cantos arredondados */
     text-decoration: none; /* Remove o sublinhado */
     font-size: 16px; /* Tamanho da fonte */
@@ -144,4 +144,10 @@ input[type="submit"]:hover {
 /* Efeito hover para os links */
 #navbar a:hover {
     color: #f0f0f0; /* Cor ao passar o mouse */
+}
+
+.form-btn {
+    display: flex; /* Ativa o Flexbox */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 10px; /* Espaço acima do grupo de botões */
 }
