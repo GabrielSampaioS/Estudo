@@ -62,7 +62,7 @@ button.addEventListener("click", updateName);
 
 Ao abrir uma página web no navegador, o código (HTML + CSS + JavaScript) é executado em um **ambiente de execução** (a aba do navegador).
 
-![alt text](image.png)
+![alt text](/img/image.png)
 
 Cada aba funciona de forma **isolada**, garantindo segurança. Ou seja, o código de uma aba não interfere diretamente em outra.
 
